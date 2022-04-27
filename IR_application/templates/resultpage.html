@@ -1,0 +1,122 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href={% static 'css/results.css' %}>
+        <title>
+            Online Course retrieval
+        </title>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="imglogo">
+                <a href="frontpage.html">
+                    <img class="logo" src={% static 'images/logo1.png' %}>
+                </a>
+            </div>
+
+            <div class="searchbar">
+                <form id="form">
+                    <input type="search" id="query" name="q" placeholder="Search...">
+                    <button>Search</button>
+                </form>
+            </div>
+
+            <div class="heading">
+                <h2 class="title">
+                    x Search results found for #insert query
+                </h3>
+            </div>
+
+        </div>
+
+        <div class="headline"><hr></div>
+
+        <div class="bodycontainer">
+
+            <div class="leftfilterbar">
+                <div class="filterhead">
+                    Filter search
+                </div>
+
+            <div class="headline"><hr></div>
+
+                <div id="checkboxes">
+                    <label>Level</label>
+                    <br>
+                    <ul>
+                        <li><input type="checkbox"> checkbox 1</li>
+                        <li><input type="checkbox"> checkbox 2</li>
+                        <li><input type="checkbox"> checkbox 3</li>
+                    </ul>
+                </div>
+
+            <div class="headline"><hr></div>
+
+                <div id="checkboxes">
+                    <label>Subject</label>
+                    <br>
+                    <ul>
+                        <li><input type="checkbox"> checkbox 1</li>
+                        <li><input type="checkbox"> checkbox 2</li>
+                        <li><input type="checkbox"> checkbox 3</li>
+                        <li><input type="checkbox"> checkbox 4</li>
+                        <li><input type="checkbox"> checkbox 5</li>
+                    </ul>
+                </div>
+
+            <div class="headline"><hr></div>
+
+            </div>
+
+            <div class="empty gap"></div>
+            <div class="results">
+                results here
+
+                <div class="formatresult">
+                    <div class="headline"><hr></div>
+                    <b><a>CourseNameHere</a></b><br>
+                    <!-- description start-->
+                    <div class="resultdescription">
+                        here write the big description paragraph.<br>
+                        here write the big description paragraph.<br>
+                        here write the big description paragraph.<br>
+                        here write the big description paragraph.<br>
+                        here write the big description paragraph.
+                    </div>
+                    <!-- description end -->
+                    <div class="headline"><hr></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="bottomhead">Home</div>
+            <div class="browseby">
+
+                <div class="bbsubject">
+                    Browse by Subject
+                    <ul>
+                        <li><a>CS</a></li>
+                        <li><a>Math</a></li>
+                        <li><a>Physics</a></li>
+                        <li><a>Biology</a></li>
+                    </ul>
+                </div>
+
+                <div class="bbprovider">
+                    Browse by provider
+                    <ul>
+                        <li><a>Coursera</a></li>
+                        <li><a>Udemy</a></li>
+                        <li><a>EdX</a></li>
+                        <li><a>Udacity</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

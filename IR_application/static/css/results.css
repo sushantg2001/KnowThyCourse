@@ -1,0 +1,93 @@
+body {
+    background-color: rgb(244, 245, 225);
+}
+img.logo{
+    width: 25%;
+    border-radius: 4px;
+}
+form {
+    background-color: #4654e1;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+h2.title{
+    position: relative;
+    left: 25%;
+}
+.container{
+    /* font-size: 40px; */
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 80% 30%;
+}
+.imglogo{
+    width: auto;
+}
+.searchbar{
+    width: auto;
+    position: relative;
+    right: 0%;
+}
+.heading{
+    width: auto;
+}
+.headline{
+    width: auto;
+}
+
+.bodycontainer{
+    position: relative;
+    left: 15%;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 24% 2% 74%;
+}
+.leftfilterbar{
+    background: LightGray;
+    display: grid;
+    align-items: center;
+}
+.filterhead{
+    width: auto;
+    position: relative;
+    align-content: center;
+}
+#checkboxes label {
+    float: left;
+}
+#checkboxes ul {
+    margin: 0;
+    list-style: none;
+    float: left;
+}
+.results{
+    background: lightgray;
+}
+
+.formatresult{
+    background: white;
+    width: 98%;
+    position: relative;
+    left: 1%;
+}
+
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(130, 131, 105);
+    color: white;
+    text-align: left;
+}
+.browseby{
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15% 15% 25%;
+}
