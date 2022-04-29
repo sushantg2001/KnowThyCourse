@@ -17,6 +17,34 @@ form {
     flex-direction: row;
     align-items: center;
 }
+input.search {
+    /* margin: 50px 0; */
+    /* background: none; */
+    color: black;
+    border-bottom: 1px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 300px;
+    height: 40px;
+}
+input:focus {
+    outline: none;
+    border-bottom: 3px solid white;
+    color: black;
+}
+button {
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 200px;
+    left: 275px;
+}
+button:focus {
+    outline: none;
+}
 .all{
     position: absolute;
     top: 45%;
@@ -42,9 +70,9 @@ img.illus{
 } */
 .footer {
     position: absolute;
-    left: 2%;
+    left: 0%;
     bottom: 0;
-    width: 96%;
+    width: 100%;
     background-color: rgb(130, 131, 105);
     color: white;
     text-align: left;

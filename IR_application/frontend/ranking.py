@@ -10,6 +10,7 @@
 # #### Shiven Gupta    2019333
 
 # %%
+from unittest import result
 import nltk
 from nltk.tokenize import word_tokenize
 import string
@@ -174,24 +175,37 @@ def inFilter(ind):
 
 # %%
 def print_results(super_ans):
-  count = 0
-  ans = []
-  hits = []
+    count = 0
+    ans = []
+    hits = []
 
-  for i in super_ans.keys():
-    for j in super_ans[i]:
-      if (inFilter(j)):
-        ans.append(j)
-        hits.append(i)
-        count = count + 1
-      if (count > 10):
-        break
-    if (count > 10):
-      break
+    for i in super_ans.keys():
+        for j in super_ans[i]:
+            if (inFilter(j)):
+                ans.append(j)
+                hits.append(i)
+                count = count + 1
+            if (count > 10):
+                break
+        if (count > 10):
+            break
 
-  for i in range(len(ans)):
-    # print(data.iloc[i,:])
-    print("Website: " + data["Website"][ans[i]] + "\t\tCourse Name: " + data["Name"][ans[i]] + "\t\tHits: " + str(hits[i]) + "\t\tRating: " + str(data["Ratings"][ans[i]]) + "\t\tDifficulty: " + data["Difficulty Level"][ans[i]])
+    result = []
+    for i in range(len(ans)):
+        # print(data.iloc[i,:])
+        x = data['Enrollment'][ans[i]]
+        if np.isnan(x):
+            x = "NA"
+        result.append({
+            "website": data["Website"][ans[i]],
+            "course_name" :data["Name"][ans[i]],
+            "rating": str(data["Ratings"][ans[i]]),
+            "difficulty" : data["Difficulty Level"][ans[i]],
+            'about': data['About'][ans[i]],
+            'enrollment': x,
+            'link': data['Link'][ans[i]]
+        })
+    return result
 
 # %%
 def query_menu():

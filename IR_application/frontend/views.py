@@ -1,7 +1,9 @@
 from urllib import request
 from django.shortcuts import render, redirect
+
 from .forms import queryForm
-from .ranking import didyoumean, perform_query_search
+from .bm25 import bm25output, didyoumean
+from .filter import filter
 # Create your views here.
 def home(request):
     if request.method == 'GET':
@@ -21,12 +23,39 @@ def home(request):
 
 
 def results(request, query):
-    print(query)
-    # print(didyoumean(query))
-    result = perform_query_search(query)
-    print(result)
-    return render(
-        request=request,
-        template_name='resultpage.html'
-    )
+    corrected_query = didyoumean(query)
+    filters = [
+        float(4.0),
+        [True, True, False, False],
+        [True, True, True]
+    ]
+    results = bm25output(query, 200)
+    filtered_results = filter(results, filters)
+    if request.method == 'GET':
+        return render(
+            request=request,
+            template_name='resultpage.html',
+            context={
+                "results":filtered_results,
+                'query': query,
+            }
+        )
 
+    elif request.method == 'POST':
+        print(request.POST)
+        filters = [
+            float(4.0),
+            [True, True, True, True],
+            [True, True, True]
+        ]
+        filtered_results = filter(results, filters)
+        return render(
+            request=request,
+            template_name='resultpage.html',
+            context={
+                "results":filtered_results,
+                'query': query,
+            }
+        )
+
+    print(filters)
