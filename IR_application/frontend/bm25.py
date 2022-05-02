@@ -113,7 +113,7 @@ def bm25output(query, topn):
         else:
             dict1["Ratings"] = float(temp)
         dict1["Link"] = data.iloc[result, 5]
-        dict1["Difficulty Level"] = data.iloc[result, 3]
+        dict1["Difficulty"] = data.iloc[result, 3]
         dict1["Enrollment"] = data.iloc[result, 8]
         output_list.append(dict1)
 

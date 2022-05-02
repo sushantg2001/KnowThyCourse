@@ -23,7 +23,7 @@ def filter(result_list,filters):
     for i in list(difficulty_map.keys()):
         if filter_difficulty[i]:
             difs.append(difficulty_map[i])
-    df = df[df['Difficulty Level'].isin(difs)]
+    df = df[df['Difficulty'].isin(difs)]
     # print(df.shape)
 
     website_map = {0:'Coursera', 1:'Edx', 2:'Udemy', 3:'Udacity'}
